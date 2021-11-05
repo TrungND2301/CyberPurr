@@ -6,11 +6,11 @@ using UnityEngine.InputSystem;
 public class TurretController : MonoBehaviour
 {
     [SerializeField] float fireRate = 1f;
-    bool isFiring;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform gun;
     GameObject instance;
     Coroutine firingCoroutine;
+    bool isFiring;
 
     void Start()
     {
