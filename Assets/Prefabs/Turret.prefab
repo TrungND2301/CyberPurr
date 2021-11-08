@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 0.5
   bulletPrefab: {fileID: 9210291494200890945, guid: 6a89cc3f6e49f084dbac70d2f8211664, type: 3}
+  explosionEffect: {fileID: 5500827879907609290, guid: fbc8a8932b698b3469e48610deadff2c, type: 3}
   gun: {fileID: 4275607728626006348}
 --- !u!114 &4275607727392889427
 MonoBehaviour:

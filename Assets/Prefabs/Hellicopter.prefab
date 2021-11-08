@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1254622273
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -6318484107250585120, guid: 867c063759c47c54d9c901872ec9a665, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -120,6 +120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   dogPrefab: {fileID: 5739565217736100355, guid: db425bbe959986647ab4a7eee676b600, type: 3}
+  explosionEffect: {fileID: 5500827879907609290, guid: fbc8a8932b698b3469e48610deadff2c, type: 3}
+  fragments: {fileID: 9187295089031708565, guid: 1f76b2354d1587545ae1e630a36fa112, type: 3}
 --- !u!60 &8296910790976200669
 PolygonCollider2D:
   m_ObjectHideFlags: 0

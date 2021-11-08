@@ -51,3 +51,9 @@ TagManager:
   - name: Turret
     uniqueID: 84322807
     locked: 0
+  - name: Hellicopter
+    uniqueID: 1254622273
+    locked: 0
+  - name: Dog
+    uniqueID: 2720021043
+    locked: 0

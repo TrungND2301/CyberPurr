@@ -7,6 +7,7 @@ public class TurretController : MonoBehaviour
 {
     [SerializeField] float fireRate = 1f;
     [SerializeField] GameObject bulletPrefab;
+    [SerializeField] ParticleSystem explosionEffect;
     [SerializeField] Transform gun;
     GameObject instance;
     Coroutine firingCoroutine;
@@ -55,5 +56,14 @@ public class TurretController : MonoBehaviour
         instance = Instantiate(bulletPrefab,
                                 gun.position,
                                 Quaternion.identity);
+    }
+
+    void PlayHitEffect()
+    {
+        if (explosionEffect != null)
+        {
+            ParticleSystem instance = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            Destroy(instance, instance.main.duration + instance.main.startLifetime.constantMax);
+        }
     }
 }

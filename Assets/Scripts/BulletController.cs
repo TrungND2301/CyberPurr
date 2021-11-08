@@ -31,6 +31,7 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject);
+        if (other.tag == "Hellicopter")
+            Destroy(gameObject);
     }
 }

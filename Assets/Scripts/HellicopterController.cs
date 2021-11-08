@@ -5,11 +5,13 @@ using UnityEngine;
 public class HellicopterController : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1f;
-    float moveDirection = 1f;
+    int moveDirection = 1;
     float randomDropTime;
     float totalFlyTime;
 
     [SerializeField] GameObject dogPrefab;
+    [SerializeField] ParticleSystem explosionEffect;
+    [SerializeField] GameObject fragments;
     bool isDropt = false;
 
     void Start()
@@ -37,7 +39,7 @@ public class HellicopterController : MonoBehaviour
 
     public void SetMoveDirection(bool isMoveFromLeft)
     {
-        moveDirection = isMoveFromLeft ? 1f : -1f;
+        moveDirection = isMoveFromLeft ? 1 : -1;
         FlipEnemyFacing();
     }
 
@@ -51,7 +53,24 @@ public class HellicopterController : MonoBehaviour
     {
         if (other.tag == "Bullet")
         {
+            PlayHitEffect();
+            DropFragments();
             Destroy(gameObject);
         }
+    }
+
+    void PlayHitEffect()
+    {
+        if (explosionEffect != null)
+        {
+            ParticleSystem instance = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            Destroy(instance, instance.main.duration + instance.main.startLifetime.constantMax);
+        }
+    }
+
+    void DropFragments()
+    {
+        GameObject instance = Instantiate(fragments, transform.position, Quaternion.identity);
+        instance.GetComponentInChildren<HellicopterBrokenController>().SetDirection(moveDirection);
     }
 }
