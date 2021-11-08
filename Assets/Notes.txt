@@ -1,0 +1,16 @@
+Progress
+1. Hellicopter
+- Fly on top of the screen: Done
+- Fly from left to right and vice versa: Done
+- Sprites show correct directions: Done
+- Drop dogs randomly: Done
+- Has animation flying: Done
+- Exploded when being hit by a bullet:
+- Breaks into small parts and fall down:
+2. Dog
+- Fall down gradually to reach the ground: Done
+- Has animation falling down: Done
+- When being hit by a bullet, dogs are pushed away then fall down and be eliminated:
+- When a dog reaches the ground, it runs toward the base: Done
+- Has animation running toward base: Done
+3. Catbase
