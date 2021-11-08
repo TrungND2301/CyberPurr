@@ -28,4 +28,9 @@ public class BulletController : MonoBehaviour
     {
         isFiring = true;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Destroy(gameObject);
+    }
 }

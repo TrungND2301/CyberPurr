@@ -46,4 +46,12 @@ public class HellicopterController : MonoBehaviour
         Instantiate(dogPrefab, transform.position, Quaternion.identity);
         isDropt = true;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Bullet")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
