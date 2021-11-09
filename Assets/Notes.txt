@@ -17,8 +17,8 @@ Progress
 - The cat's base is positioned at the bottom center: Done
 - The cat's gun follow the mouse's position: Working
 - The gun cannot target dogs on the ground: Working
-- Use mouse left click to shoot, hold down to fire automatically: Working
-- Limit the fire rate of the gun (i.e. do not accept incredibly fast click speed): Done
+- Use mouse left click to shoot, hold down to fire automatically: Done
+- Limit the fire rate of the gun: Done
 - The base exploded when a dog reach it: Done
 - Has animation explosion: Done
 4. Bullet

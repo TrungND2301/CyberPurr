@@ -6,10 +6,10 @@ using UnityEngine.InputSystem;
 public class CatBaseController : MonoBehaviour
 {
     [SerializeField] float fireRate = 1.0f;
-    [SerializeField] GameObject bulletPrefab;
-    [SerializeField] ParticleSystem explosionEffect;
     [SerializeField] Transform gun;
+    [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject fragments;
+    [SerializeField] ParticleSystem explosionEffect;
     GameObject instance;
     Coroutine firingCoroutine;
     bool isFiring;
@@ -28,12 +28,15 @@ public class CatBaseController : MonoBehaviour
     void OnFire(InputValue value)
     {
         isFiring = value.isPressed;
+    }
 
+    void Fire()
+    {
         if (instance != null)
         {
             if (isFiring && firingCoroutine == null)
             {
-                firingCoroutine = StartCoroutine(Fire());
+                firingCoroutine = StartCoroutine(FireContinuously());
             }
         }
         else
@@ -42,14 +45,15 @@ public class CatBaseController : MonoBehaviour
         }
     }
 
-    IEnumerator Fire()
+    IEnumerator FireContinuously()
     {
-        instance.GetComponent<BulletController>().Fire();
+        while (isFiring)
+        {
+            instance.GetComponent<BulletController>().Fire();
 
-        yield return new WaitForSeconds(fireRate);
-
-        SpawnBullet();
-        isFiring = false;
+            yield return new WaitForSeconds(fireRate);
+            SpawnBullet();
+        }
         firingCoroutine = null;
     }
 
@@ -96,7 +100,7 @@ public class CatBaseController : MonoBehaviour
 
     void ExplodeFragments()
     {
-        GameObject instance = Instantiate(fragments, transform.position, Quaternion.identity);
+        Instantiate(fragments, transform.position, Quaternion.identity);
 
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
     }
