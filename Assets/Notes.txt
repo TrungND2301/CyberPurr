@@ -14,11 +14,13 @@ Progress
 - When a dog reaches the ground, it runs toward the base: Done
 - Has animation running toward base: Done
 3. Catbase
-The cat's base is positioned at the bottom center. The cat's gun follow the mouse's position. The gun cannot target dogs on the ground
-Use mouse left click to shoot, hold down to fire automatically
-Limit the fire rate of the gun (i.e. do not accept incredibly fast click speed)
-The base exploded when a dog reach it
-Has animation: explosion
+- The cat's base is positioned at the bottom center: Done
+- The cat's gun follow the mouse's position: Working
+- The gun cannot target dogs on the ground: Working
+- Use mouse left click to shoot, hold down to fire automatically: Working
+- Limit the fire rate of the gun (i.e. do not accept incredibly fast click speed): Done
+- The base exploded when a dog reach it: Done
+- Has animation explosion: Done
 4. Bullet
 Explode and destroy helicopters on hit
 Not explode but push and eliminate dogs on hit (be able to go through multiple dogs)

@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9187295089031708564}
-  m_Layer: 0
-  m_Name: HellicopterFragments
-  m_TagString: Untagged
+  m_Layer: 9
+  m_Name: HellicopterFrags
+  m_TagString: Hellicopter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 3355710053840373557}
   - component: {fileID: 5807067314382085407}
   - component: {fileID: 4246280939795460415}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TEX_Frag_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,8 +110,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1254622273
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 42385ef25ff4ca140b3ecd847ec3b8be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 603851267670751915}
   - component: {fileID: 1863271310537771969}
   - component: {fileID: 383659427266800115}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TEX_Frag_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,8 +255,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1254622273
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f66e294510f148747a9fb6b2792fa55e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 4871052410722466293}
   - component: {fileID: 2674080742246929274}
   - component: {fileID: 4135340663257905049}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TEX_Frag_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,8 +400,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1254622273
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7e20ba3bae7273241acca31832a58268, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 969209501840460687}
   - component: {fileID: 2455416624320883241}
   - component: {fileID: 5168054607147507581}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TEX_Frag_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,8 +545,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1254622273
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0532f5c5511507648b60a5ee7ef3592d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -631,7 +631,7 @@ GameObject:
   - component: {fileID: 6282285928663051933}
   - component: {fileID: 3859462604012882224}
   - component: {fileID: 6542796264457134170}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TEX_Frag_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -690,8 +690,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1254622273
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: df2a4e0bc2887a8449f2b4432c8a94cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -776,7 +776,7 @@ GameObject:
   - component: {fileID: 4814646563702967690}
   - component: {fileID: 2783410104223315728}
   - component: {fileID: 6346132879984931023}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TEX_Frag_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -835,8 +835,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1254622273
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cebced9d54d8f6c4a9f0857614269172, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -921,7 +921,7 @@ GameObject:
   - component: {fileID: 5252047157743697883}
   - component: {fileID: 599691917465706674}
   - component: {fileID: 1092174261508279382}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TEX_Frag_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -980,8 +980,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1254622273
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 49baded670610f445941222a0d93fae4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1066,7 +1066,7 @@ GameObject:
   - component: {fileID: 5394584292250941333}
   - component: {fileID: 6320377477270351899}
   - component: {fileID: 1723449008029954986}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TEX_Frag_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1125,8 +1125,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1254622273
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a60d48da38010164aad648856e594bc5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

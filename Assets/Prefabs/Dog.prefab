@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7151667792151746160}
   - component: {fileID: 8343569948850661818}
   - component: {fileID: -1519428509100023429}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dog
   m_TagString: Dog
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1574946253
-  m_SortingLayer: 4
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 8079465181741307060, guid: 65aefca5a9c810e43aa0653bbc45e7a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -15,10 +15,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Bullet
+  - Dog
+  - Hellicopter
   - 
   - 
   - 
@@ -45,15 +45,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Bullet
-    uniqueID: 102810635
-    locked: 0
-  - name: Turret
-    uniqueID: 84322807
-    locked: 0
   - name: Hellicopter
     uniqueID: 1254622273
     locked: 0
   - name: Dog
     uniqueID: 2720021043
+    locked: 0
+  - name: Bullet
+    uniqueID: 102810635
+    locked: 0
+  - name: Player
+    uniqueID: 84322807
     locked: 0

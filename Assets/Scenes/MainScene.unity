@@ -417,7 +417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4275607727392889431, guid: a123a216be5ce984e85aaf8f3a65d36c, type: 3}
       propertyPath: m_Name
-      value: Turret
+      value: CatBase
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a123a216be5ce984e85aaf8f3a65d36c, type: 3}

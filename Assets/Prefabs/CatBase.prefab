@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 4275607727392889427}
   - component: {fileID: -157164142424109127}
   - component: {fileID: 3296383651781182295}
-  m_Layer: 0
-  m_Name: Turret
+  m_Layer: 6
+  m_Name: CatBase
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 84322807
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ea85370aedcd94f4283608cae7c11f94, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -104,6 +104,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 9210291494200890945, guid: 6a89cc3f6e49f084dbac70d2f8211664, type: 3}
   explosionEffect: {fileID: 5500827879907609290, guid: fbc8a8932b698b3469e48610deadff2c, type: 3}
   gun: {fileID: 4275607728626006348}
+  fragments: {fileID: 4154102554618386435, guid: bebb7b1835dce344481bf4d304a8a6f8, type: 3}
 --- !u!114 &4275607727392889427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +169,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0113631785, y: -0.14317727}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -179,7 +180,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.85912734, y: 1.6036453}
+  m_Size: {x: 0.8, y: 1.8}
   m_EdgeRadius: 0
 --- !u!1 &4275607728626006349
 GameObject:
@@ -190,7 +191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4275607728626006348}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

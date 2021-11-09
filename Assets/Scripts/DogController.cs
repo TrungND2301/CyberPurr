@@ -34,7 +34,7 @@ public class DogController : MonoBehaviour
     {
         if (other.tag == "Bullet")
         {
-            Destroy(gameObject);
+            // Destroy(gameObject);
         }
         if (other.tag == "Background")
         {

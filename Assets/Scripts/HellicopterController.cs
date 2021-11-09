@@ -64,6 +64,21 @@ public class HellicopterController : MonoBehaviour
         if (explosionEffect != null)
         {
             ParticleSystem instance = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            instance.Stop();
+
+            var main = instance.main;
+            main.duration = 0.5f;
+            main.startLifetime = 1.0f;
+            main.maxParticles = 1;
+
+            var shape = instance.shape;
+            shape.radius = 0.1f;
+
+            var psr = instance.GetComponent<ParticleSystemRenderer>();
+            psr.sortingLayerName = "Hellicopter";
+            psr.sortingOrder = 1;
+
+            instance.Play();
             Destroy(instance, instance.main.duration + instance.main.startLifetime.constantMax);
         }
     }
