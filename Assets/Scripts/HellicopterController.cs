@@ -45,7 +45,7 @@ public class HellicopterController : MonoBehaviour
 
     void DropDog()
     {
-        Instantiate(dogPrefab, transform.position, Quaternion.identity);
+        // Instantiate(dogPrefab, transform.position, Quaternion.identity);
         isDropt = true;
     }
 

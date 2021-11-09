@@ -7,7 +7,9 @@ public class BulletController : MonoBehaviour
 {
     [SerializeField] float bulletSpeed = 1f;
     Mouse currentMouse;
-    Vector2 mousePosition;
+    Vector3 mousePosition;
+    Vector2 direction;
+    float angle;
 
     bool isFiring = false;
 
@@ -26,8 +28,10 @@ public class BulletController : MonoBehaviour
         // }
 
         mousePosition = Camera.main.ScreenToWorldPoint(currentMouse.position.ReadValue());
-        transform.position = Vector2.MoveTowards(transform.position, mousePosition, 1f * Time.deltaTime);
-        Debug.Log(mousePosition.x + " " + mousePosition.y);
+        direction = mousePosition - transform.position;
+        angle = Vector2.SignedAngle(Vector2.up, direction);
+        angle = Mathf.Clamp(angle, -90.0f, 90.0f);
+        transform.eulerAngles = new Vector3(0, 0, angle);
     }
 
     public void Fire()

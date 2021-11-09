@@ -101,10 +101,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 0.5
-  bulletPrefab: {fileID: 9210291494200890945, guid: 6a89cc3f6e49f084dbac70d2f8211664, type: 3}
-  explosionEffect: {fileID: 5500827879907609290, guid: fbc8a8932b698b3469e48610deadff2c, type: 3}
   gun: {fileID: 4275607728626006348}
+  bulletPrefab: {fileID: 9210291494200890945, guid: 6a89cc3f6e49f084dbac70d2f8211664, type: 3}
   fragments: {fileID: 4154102554618386435, guid: bebb7b1835dce344481bf4d304a8a6f8, type: 3}
+  explosionEffect: {fileID: 5500827879907609290, guid: fbc8a8932b698b3469e48610deadff2c, type: 3}
 --- !u!114 &4275607727392889427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4275607728626006349}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4275607727392889430}
