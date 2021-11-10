@@ -5,14 +5,21 @@ using UnityEngine;
 public class DogController : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1f;
+    Rigidbody2D rb2D;
     Animator animator;
     bool isFalling;
     bool isRunning;
     int direction;
+    bool isEliminated;
+    bool isGroundTouched;
+    public bool isDogEliminated { get { return isEliminated; } }
+    public bool isDogGroundTouched { get { return isGroundTouched; } }
+    float thrust = 5.0f;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        rb2D = GetComponent<Rigidbody2D>();
 
         direction = transform.position.x < 0 ? 1 : -1;
         if (direction < 0)
@@ -20,6 +27,8 @@ public class DogController : MonoBehaviour
 
         isFalling = true;
         isRunning = false;
+        isEliminated = false;
+        isGroundTouched = false;
     }
 
     void Update()
@@ -32,21 +41,39 @@ public class DogController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Bullet")
+        if (other.tag == "Bullet" && other.GetComponent<BulletController>().isFiringStatus)
         {
-            // Destroy(gameObject);
+            isEliminated = true;
+            isRunning = false;
+            isFalling = false;
+            animator.enabled = false;
+            transform.eulerAngles = other.GetComponent<Transform>().eulerAngles;
+            rb2D.AddForce(transform.up * thrust, ForceMode2D.Impulse);
+            rb2D.AddTorque(5.0f);
+            GetComponent<Rigidbody2D>().gravityScale = 1;
+            GetComponent<BoxCollider2D>().isTrigger = false;
         }
-        if (other.tag == "Background")
+        if (other.tag == "Background" && !isEliminated)
         {
             isFalling = false;
             isRunning = true;
+            isGroundTouched = true;
             animator.SetBool("isRunning", true);
         }
-        if (other.tag == "Player")
+        if (other.tag == "Player" && isGroundTouched)
         {
             isRunning = false;
             isFalling = false;
             animator.enabled = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Background" && isEliminated)
+        {
+            GetComponent<BoxCollider2D>().isTrigger = true;
+            Destroy(gameObject, 2.0f);
         }
     }
 

@@ -7,13 +7,11 @@ public class HellicopterBrokenController : MonoBehaviour
     float rotateSpeed = 1.0f;
     float moveSpeed = 1.0f;
     int direction = 1;
-    bool isGroundTouch;
 
     void Start()
     {
         rotateSpeed = Random.Range(50, 100.0f);
         moveSpeed = Random.Range(-5f, 5f);
-        isGroundTouch = false;
     }
 
     void Update()
@@ -32,7 +30,7 @@ public class HellicopterBrokenController : MonoBehaviour
         if (other.gameObject.tag == "Background")
         {
             GetComponent<BoxCollider2D>().isTrigger = true;
-            Destroy(gameObject, 1.0f);
+            Destroy(gameObject, 2.0f);
         }
     }
 }

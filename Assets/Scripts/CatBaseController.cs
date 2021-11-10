@@ -22,7 +22,8 @@ public class CatBaseController : MonoBehaviour
 
     void Update()
     {
-        Fire();
+        if (!isExploded)
+            Fire();
     }
 
     void OnFire(InputValue value)
@@ -64,11 +65,15 @@ public class CatBaseController : MonoBehaviour
                                 Quaternion.identity);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag == "Dog" && !isExploded)
+        if (other.tag == "Dog" &&
+            !other.GetComponent<DogController>().isDogEliminated &&
+            other.GetComponent<DogController>().isDogGroundTouched &&
+            !isExploded)
         {
             isExploded = true;
+            Destroy(instance);
             PlayExplosionEffect();
             ExplodeFragments();
         }

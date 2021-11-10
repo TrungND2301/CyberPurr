@@ -45,7 +45,7 @@ public class HellicopterController : MonoBehaviour
 
     void DropDog()
     {
-        // Instantiate(dogPrefab, transform.position, Quaternion.identity);
+        Instantiate(dogPrefab, transform.position, Quaternion.identity);
         isDropt = true;
     }
 
@@ -87,5 +87,6 @@ public class HellicopterController : MonoBehaviour
     {
         GameObject instance = Instantiate(fragments, transform.position, Quaternion.identity);
         instance.GetComponentInChildren<HellicopterBrokenController>().SetDirection(moveDirection);
+        Destroy(instance, 4.0f);
     }
 }

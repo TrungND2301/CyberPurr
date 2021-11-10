@@ -13,6 +13,7 @@ public class BulletController : MonoBehaviour
     float angle;
 
     bool isFiring = false;
+    public bool isFiringStatus { get { return isFiring; } }
 
     [SerializeField] ParticleSystem smokeEffect;
     ParticleSystem instance;

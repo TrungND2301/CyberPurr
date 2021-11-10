@@ -10,7 +10,7 @@ Progress
 2. Dog
 - Fall down gradually to reach the ground: Done
 - Has animation falling down: Done
-- When being hit by a bullet, dogs are pushed away then fall down and be eliminated:
+- When being hit by a bullet, dogs are pushed away then fall down and be eliminated: Done
 - When a dog reaches the ground, it runs toward the base: Done
 - Has animation running toward base: Done
 3. Catbase
@@ -23,11 +23,11 @@ Progress
 - Has animation explosion: Done
 4. Bullet
 - Explode and destroy helicopters on hit: Done
-- Not explode but push and eliminate dogs on hit (be able to go through multiple dogs): Working
+- Not explode but push and eliminate dogs on hit (be able to go through multiple dogs): Done
 - Has smoke behind while flying: Done
 5. UI
 Have Main menu & able to start game
 Has UI to display current score
 Has Game Over screen & able to replay game
 6. Audio
-In addition to the basic functionalities, implement more sound effects
+- In addition to the basic functionalities, implement more sound effects
