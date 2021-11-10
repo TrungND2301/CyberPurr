@@ -15,16 +15,16 @@ Progress
 - Has animation running toward base: Done
 3. Catbase
 - The cat's base is positioned at the bottom center: Done
-- The cat's gun follow the mouse's position: Working
-- The gun cannot target dogs on the ground: Working
+- The cat's gun follow the mouse's position: Done
+- The gun cannot target dogs on the ground: Done
 - Use mouse left click to shoot, hold down to fire automatically: Done
 - Limit the fire rate of the gun: Done
 - The base exploded when a dog reach it: Done
 - Has animation explosion: Done
 4. Bullet
-Explode and destroy helicopters on hit
-Not explode but push and eliminate dogs on hit (be able to go through multiple dogs)
-Has smoke behind while flying
+- Explode and destroy helicopters on hit: Done
+- Not explode but push and eliminate dogs on hit (be able to go through multiple dogs): Working
+- Has smoke behind while flying: Working
 5. UI
 Have Main menu & able to start game
 Has UI to display current score
