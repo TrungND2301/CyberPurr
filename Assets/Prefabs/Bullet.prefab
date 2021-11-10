@@ -98,7 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76abcbad9782b29429073dc52a27099d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 5
+  bulletSpeed: 10
+  smokeEffect: {fileID: 2124093115361981107, guid: a96c13aa2926c734cb281db4e8a73eda, type: 3}
 --- !u!70 &4269173245822968049
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

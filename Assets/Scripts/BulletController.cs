@@ -14,6 +14,8 @@ public class BulletController : MonoBehaviour
 
     bool isFiring = false;
 
+    [SerializeField] ParticleSystem smokeEffect;
+    ParticleSystem instance;
     void Start()
     {
         currentMouse = Mouse.current;
@@ -40,11 +42,25 @@ public class BulletController : MonoBehaviour
     public void Fire()
     {
         isFiring = true;
+        PlaySmokeEffect();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Hellicopter")
+        {
             Destroy(gameObject);
+        }
+    }
+
+    void PlaySmokeEffect()
+    {
+        if (smokeEffect != null)
+        {
+            instance = Instantiate(smokeEffect, transform.position, Quaternion.identity);
+            instance.transform.parent = gameObject.transform;
+            instance.transform.eulerAngles = gameObject.transform.eulerAngles;
+            instance.Play();
+        }
     }
 }

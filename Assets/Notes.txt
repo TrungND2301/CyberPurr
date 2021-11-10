@@ -24,7 +24,7 @@ Progress
 4. Bullet
 - Explode and destroy helicopters on hit: Done
 - Not explode but push and eliminate dogs on hit (be able to go through multiple dogs): Working
-- Has smoke behind while flying: Working
+- Has smoke behind while flying: Done
 5. UI
 Have Main menu & able to start game
 Has UI to display current score
