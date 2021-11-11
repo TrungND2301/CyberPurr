@@ -11,12 +11,6 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] bool isLooping = false;
     GameObject instance;
 
-    void Start()
-    {
-        isLooping = true;
-        StartCoroutine(SpawnEnemy());
-    }
-
     IEnumerator SpawnEnemy()
     {
         do
@@ -47,5 +41,16 @@ public class EnemySpawner : MonoBehaviour
         float spawnTime = Random.Range(spawnRate - spawnTimeVariance,
                                         spawnRate + spawnTimeVariance);
         return Mathf.Clamp(spawnTime, minimumSpawnTime, float.MaxValue);
+    }
+
+    public void StartSpawn()
+    {
+        isLooping = true;
+        StartCoroutine(SpawnEnemy());
+    }
+
+    public void StopSpawn()
+    {
+        isLooping = false;
     }
 }

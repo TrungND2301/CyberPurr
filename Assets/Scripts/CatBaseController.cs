@@ -15,16 +15,19 @@ public class CatBaseController : MonoBehaviour
     AudioPlayer audioPlayer;
     GameObject instance;
     Coroutine firingCoroutine;
+    GameController gameController;
 
     bool isFiring;
     bool isExploded;
 
     void Awake()
     {
+        gameController = FindObjectOfType<GameController>();
         audioPlayer = FindObjectOfType<AudioPlayer>();
+        isExploded = true;
     }
 
-    void Start()
+    public void StartCatBase()
     {
         isFiring = false;
         isExploded = false;
@@ -82,6 +85,8 @@ public class CatBaseController : MonoBehaviour
             audioPlayer.PlayExplosionClip();
             PlayExplosionEffect();
             ExplodeFragments();
+
+            StartCoroutine(ShowGameoverCanvas());
         }
     }
 
@@ -114,5 +119,11 @@ public class CatBaseController : MonoBehaviour
         Instantiate(fragments, transform.position, Quaternion.identity);
 
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    IEnumerator ShowGameoverCanvas()
+    {
+        yield return new WaitForSeconds(5.0f);
+        gameController.ShowCanvasGameover();
     }
 }
