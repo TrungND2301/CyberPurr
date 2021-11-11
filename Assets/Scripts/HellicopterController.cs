@@ -4,21 +4,29 @@ using UnityEngine;
 
 public class HellicopterController : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 1f;
+    [SerializeField] float moveSpeed = 1.0f;
     int moveDirection = 1;
     float randomDropTime;
     float totalFlyTime;
+    float hellicopterLifetime;
 
     [SerializeField] GameObject dogPrefab;
     [SerializeField] ParticleSystem explosionEffect;
     [SerializeField] GameObject fragments;
+    ScoreKeeper scoreKeeper;
     bool isDropt = false;
+
+    void Awake()
+    {
+        scoreKeeper = FindObjectOfType<ScoreKeeper>();
+    }
 
     void Start()
     {
-        float timeToFlyAcrossScreen = (Camera.main.orthographicSize * 2f) / moveSpeed;
-        randomDropTime = Random.Range(0f, timeToFlyAcrossScreen);
-        totalFlyTime = 0;
+        float timeToFlyAcrossScreen = (Camera.main.orthographicSize * 2.0f * Screen.width / Screen.height) / moveSpeed;
+        randomDropTime = Random.Range(0.0f, timeToFlyAcrossScreen);
+        totalFlyTime = 0.0f;
+        Destroy(gameObject, timeToFlyAcrossScreen + 1.0f);
     }
 
     void Update()
@@ -34,7 +42,7 @@ public class HellicopterController : MonoBehaviour
     void FlipEnemyFacing()
     {
         // GetComponent<SpriteRenderer>().flipX = moveDirection > 0 ? false : true;
-        transform.localScale = new Vector2(Mathf.Sign(moveDirection), 1f);
+        transform.localScale = new Vector2(Mathf.Sign(moveDirection), 1.0f);
     }
 
     public void SetMoveDirection(bool isMoveFromLeft)
@@ -53,6 +61,7 @@ public class HellicopterController : MonoBehaviour
     {
         if (other.tag == "Bullet")
         {
+            scoreKeeper.AddScore(1);
             PlayHitEffect();
             DropFragments();
             Destroy(gameObject);
@@ -79,7 +88,7 @@ public class HellicopterController : MonoBehaviour
             psr.sortingOrder = 1;
 
             instance.Play();
-            Destroy(instance, instance.main.duration + instance.main.startLifetime.constantMax);
+            Destroy(instance.gameObject, instance.main.duration + instance.main.startLifetime.constantMax);
         }
     }
 

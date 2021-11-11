@@ -6,18 +6,29 @@ using UnityEngine.InputSystem;
 public class CatBaseController : MonoBehaviour
 {
     [SerializeField] float fireRate = 1.0f;
+
     [SerializeField] Transform gun;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject fragments;
     [SerializeField] ParticleSystem explosionEffect;
+
+    AudioPlayer audioPlayer;
     GameObject instance;
     Coroutine firingCoroutine;
+
     bool isFiring;
     bool isExploded;
 
+    void Awake()
+    {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
+
     void Start()
     {
+        isFiring = false;
         isExploded = false;
+        SpawnBullet();
     }
 
     void Update()
@@ -33,16 +44,9 @@ public class CatBaseController : MonoBehaviour
 
     void Fire()
     {
-        if (instance != null)
+        if (isFiring && firingCoroutine == null)
         {
-            if (isFiring && firingCoroutine == null)
-            {
-                firingCoroutine = StartCoroutine(FireContinuously());
-            }
-        }
-        else
-        {
-            SpawnBullet();
+            firingCoroutine = StartCoroutine(FireContinuously());
         }
     }
 
@@ -51,18 +55,18 @@ public class CatBaseController : MonoBehaviour
         while (isFiring)
         {
             instance.GetComponent<BulletController>().Fire();
+            audioPlayer.PlayShootingClip();
 
             yield return new WaitForSeconds(fireRate);
             SpawnBullet();
         }
+
         firingCoroutine = null;
     }
 
     void SpawnBullet()
     {
-        instance = Instantiate(bulletPrefab,
-                                gun.position,
-                                Quaternion.identity);
+        instance = Instantiate(bulletPrefab, gun.position, Quaternion.identity);
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -74,6 +78,8 @@ public class CatBaseController : MonoBehaviour
         {
             isExploded = true;
             Destroy(instance);
+
+            audioPlayer.PlayExplosionClip();
             PlayExplosionEffect();
             ExplodeFragments();
         }

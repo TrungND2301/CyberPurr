@@ -30,4 +30,4 @@ Have Main menu & able to start game
 Has UI to display current score
 Has Game Over screen & able to replay game
 6. Audio
-- In addition to the basic functionalities, implement more sound effects
+- In addition to the basic functionalities, implement more sound effects: Done

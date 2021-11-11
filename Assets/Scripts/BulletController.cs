@@ -5,9 +5,9 @@ using UnityEngine.InputSystem;
 
 public class BulletController : MonoBehaviour
 {
-    [SerializeField] float bulletSpeed = 1f;
+    [SerializeField] float bulletSpeed = 1.0f;
+    [SerializeField] float projectileLifetime = 2.0f;
 
-    Mouse currentMouse;
     Vector3 mousePosition;
     Vector2 direction;
     float angle;
@@ -17,9 +17,10 @@ public class BulletController : MonoBehaviour
 
     [SerializeField] ParticleSystem smokeEffect;
     ParticleSystem instance;
+
     void Start()
     {
-        currentMouse = Mouse.current;
+        transform.eulerAngles = new Vector3(0, 0, CalculateAngleToMousePoint());
     }
 
     void Update()
@@ -32,18 +33,25 @@ public class BulletController : MonoBehaviour
         else
         {
             // Calculator direction and angle to mouse point
-            mousePosition = Camera.main.ScreenToWorldPoint(currentMouse.position.ReadValue());
-            direction = mousePosition - transform.position;
-            angle = Vector2.SignedAngle(Vector2.up, direction);
-            angle = Mathf.Clamp(angle, -90.0f, 90.0f);
-            transform.eulerAngles = new Vector3(0, 0, angle);
+            transform.eulerAngles = new Vector3(0.0f, 0.0f, CalculateAngleToMousePoint());
         }
+    }
+
+    float CalculateAngleToMousePoint()
+    {
+        mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        direction = mousePosition - transform.position;
+        angle = Vector2.SignedAngle(Vector2.up, direction);
+        angle = Mathf.Clamp(angle, -90.0f, 90.0f);
+
+        return angle;
     }
 
     public void Fire()
     {
         isFiring = true;
         PlaySmokeEffect();
+        Destroy(gameObject, projectileLifetime);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

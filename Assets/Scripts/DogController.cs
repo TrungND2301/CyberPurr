@@ -7,6 +7,7 @@ public class DogController : MonoBehaviour
     [SerializeField] float moveSpeed = 1f;
     Rigidbody2D rb2D;
     Animator animator;
+    ScoreKeeper scoreKeeper;
     bool isFalling;
     bool isRunning;
     int direction;
@@ -15,6 +16,11 @@ public class DogController : MonoBehaviour
     public bool isDogEliminated { get { return isEliminated; } }
     public bool isDogGroundTouched { get { return isGroundTouched; } }
     float thrust = 5.0f;
+
+    void Awake()
+    {
+        scoreKeeper = FindObjectOfType<ScoreKeeper>();
+    }
 
     void Start()
     {
@@ -47,11 +53,16 @@ public class DogController : MonoBehaviour
             isRunning = false;
             isFalling = false;
             animator.enabled = false;
+
+            scoreKeeper.AddScore(1);
+
             transform.eulerAngles = other.GetComponent<Transform>().eulerAngles;
             rb2D.AddForce(transform.up * thrust, ForceMode2D.Impulse);
             rb2D.AddTorque(5.0f);
-            GetComponent<Rigidbody2D>().gravityScale = 1;
+            GetComponent<Rigidbody2D>().gravityScale = 1.0f;
             GetComponent<BoxCollider2D>().isTrigger = false;
+
+            Destroy(gameObject, 4.0f);
         }
         if (other.tag == "Background" && !isEliminated)
         {

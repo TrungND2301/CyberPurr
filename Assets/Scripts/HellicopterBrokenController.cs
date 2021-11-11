@@ -10,13 +10,13 @@ public class HellicopterBrokenController : MonoBehaviour
 
     void Start()
     {
-        rotateSpeed = Random.Range(50, 100.0f);
-        moveSpeed = Random.Range(-5f, 5f);
+        rotateSpeed = Random.Range(50.0f, 100.0f);
+        moveSpeed = Random.Range(-5.0f, 5.0f);
     }
 
     void Update()
     {
-        transform.position += new Vector3(moveSpeed * Time.deltaTime, 0, 0);
+        transform.position += new Vector3(moveSpeed * Time.deltaTime, 0.0f, 0.0f);
         transform.Rotate(0f, 0f, rotateSpeed * Time.deltaTime * direction, Space.Self);
     }
 
